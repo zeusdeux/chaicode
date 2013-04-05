@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>chaicode &alpha;</title>
+	<meta name="keywords" content="chaicode,live,html,html5,javascript,css,editor,programming,jquery" />
+	<meta name="description" content="chaicode is a html, javascript and css editor that shows output in realtime across devices." />
+	<meta name="author" content="Mudit Ameta" />
+	<meta name="robots" content="index,follow" />
+	<link rel="stylesheet" href="/css/reset.css" />
+	<link rel="stylesheet" href="/css/chaicode.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="/js/chaicode.js"></script>
+	<script src="/js/util.js"></script>
+	<script src="/js/main.js"></script>
+
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+	<div id="main_container">
+		<form method="post" id="code_form">
+		<div id="chaicode_container">
+			<div class="left">
+				<p>html</p>
+				<textarea id="chaicode_html_content" name="chaicode[html]" data-code="html"><%= html %></textarea>
+			</div>
+			<div class="left">
+				<p>css</p>
+				<textarea id="chaicode_css_content" name="chaicode[css]" data-code="css"><%= css %></textarea>
+			</div>
+			<div class="left">
+				<p>javascript</p>
+				<textarea id="chaicode_js_content" name="chaicode[js]" data-code="js"><%= js %></textarea>
+			</div>
+			<div class="left">
+				<p>output</p>
+				<iframe id="chaicode_output_frame"></iframe>
+			</div>
+			<!-- <div id="radio_buttons">
+				<p>Wrap javascript in: </p>
+				<label for="chaicode_onready_wrap">jQuery ready</label><input type="radio" name="chaicode[wrapMethod]" id="chaicode_onready_wrap" value="jqueryReady"/>
+				<label for="chaicode_onload_wrap">window.onload</label><input type="radio" name="chaicode[wrapMethod]" id="chaicode_onload_wrap" value="onload"/>
+				<label for="chaicode_none_wrap">none</label><input type="radio" name="chaicode[wrapMethod]" id="chaicode_none_wrap" checked="checked" value="none"/>
+			</div> -->
+			<div id="action_buttons" class="clear">
+				
+				<div class="button left" id="save">
+					<p>Save</p>
+				</div>
+				
+				<div class="button left" id="export">
+					<p>Export</p>
+				</div>
+				
+				<div class="button left" id="fork">
+					<p>Fork</p>
+				</div>
+				
+				<div class="button left" id="live_scrn">
+					<p>Live</p>
+				</div>
+				
+				<!-- <div class="button left" id="collab">
+					<p>Collab</p>
+				</div> -->
+				
+				<div class="button left" id="new_chai">
+					<a href="">New</a>
+				</div>
+			</div>
+		</div>
+		</form>
+	</div>
+</body>
+</html>

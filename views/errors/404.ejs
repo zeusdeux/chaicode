@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>chaicode:ERROR</title>
+	<link rel="stylesheet" href="/css/reset.css" />
+	<link rel="stylesheet" href="/css/error.css">
+	<script type="text/javascript">
+		window.onload = function(){
+			document.getElementById("back").addEventListener("click", function(e){
+				history.go(-1);
+			});
+		}
+	</script>
+</head>
+<body class="body_404">
+	<div class="error_container">
+		<div class="error_code"><p>Oh noes a <span>404!</span> :(</p></div>
+		<div class="error_text">chaicode: We cant find teh paeg u r lookin 4.</div>
+		<div class="back_button" id="back">Go back!</div>
+	</div>
+</body>
+</html>

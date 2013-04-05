@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>chaicode &alpha;</title>
+	<meta name="keywords" content="chaicode,live,html,html5,javascript,css,editor,programming,jquery" />
+	<meta name="description" content="chaicode is a live html, javascript and css editor." />
+	<meta name="author" content="Mudit Ameta" />
+	<meta name="robots" content="index,follow" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<style type="text/css" id="chaicode_css">
+		<%- css %>
+	</style>
+
+	<!-- This shouldn't be hardlinked since its based on the user selection of libraries. Fix this shit. -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/js/socketioClient.js"></script>
+
+	<script type="text/javascript" id="chaicode_js"> 
+		//<![CDATA[
+		//< % - var % > renders after decoding the html entities to their respective characters.
+		//for example &lt;div&gt; is rendered as <div>\
+		//Unescaped html basically.
+			<%- js %> 
+		//]]>
+	</script>
+</head>
+<body>
+	<%- html %>
+</body>
+</html>

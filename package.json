@@ -1,0 +1,33 @@
+{
+  "name": "chaicode",
+  "description": "A quick web prototyping tool which updates live across devices without the need to refresh.",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Mudit Ameta <zeusdeux@gmail.com>",
+  "keywords": [
+    "dev",
+    "real time",
+    "prototyping",
+    "live",
+    "tools"],
+  "bugs": {
+    "email": "zeusdeux@gmail.com"
+  },
+  "licenses": [{
+    "type": "GNU General Public License, version 3 (GPL-3.0)",
+    "url": "http://opensource.org/licenses/gpl-3.0.html"
+  }],
+  "scripts": {
+    "start": "nodemon --ext .js,.json app.js"
+  },
+  "dependencies": {
+    "express": "3.1.0",
+    "ejs": "~0.8.3",
+    "socket.io": "~0.9.13",
+    "mongodb": "~1.2.13",
+    "nodemon": "~0.7.2"
+  },
+  "engines": {
+    "node": "0.8.x"
+  }
+}

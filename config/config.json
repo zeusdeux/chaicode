@@ -1,0 +1,18 @@
+{
+	"APP": {
+		"PORT": 3000
+	},
+	"DB": {
+		"HOST": "localhost",
+		"PORT": 12345,
+		"OPTIONS": {
+			"native_parser": true,
+			"w": 1,
+			"auto_reconnect": true
+		},
+		"NAME": "chaicode",
+		"AUTH_ENABLED": false,
+		"UNAME": "",
+		"PASS": ""
+	}
+}

@@ -41,6 +41,10 @@ Upcoming Features
 - __Code highlighting and prettyfying__
 - JSLint support
 - Support for SASS, CoffeeScript, Jade and other popular engines
+- Timeline of different chai recipes or versions of your code
+- __Ability to delete a particular chai__
+- User login support
+- __Landing page for all present chais on the server (public ones) and on per user basis__
 
 Things in bold are what I am working on currently.   
 

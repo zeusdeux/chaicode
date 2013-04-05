@@ -4,6 +4,7 @@
  * 2)enabling download of exported file via getFile
  * 3)converting integers to and from base 62
  * 4)creating mock errors for testing
+ * 5)colors object with ANSI color coeds to be used for logging to stdout
  */
 
 var fs = require('fs');

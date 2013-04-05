@@ -4,7 +4,7 @@
 	},
 	"DB": {
 		"HOST": "localhost",
-		"PORT": 12345,
+		"PORT": 27017,
 		"OPTIONS": {
 			"native_parser": true,
 			"w": 1,

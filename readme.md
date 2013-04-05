@@ -2,7 +2,7 @@ chaicode
 -------------
 ##### (chai -kode), *n.*  
 
-An HTML, CSS & JavaScript prototyping tool that works *live* across devices.
+An HTML, CSS & JavaScript prototyping tool that shows code updates *live* across devices.
    
 Chaicode lets you try out ideas quickly and live across devices. NO MOAR REFRESHES!  
 You can simultaneously test your layout on a desktop, phone and tablet. YAY!  

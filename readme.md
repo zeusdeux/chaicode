@@ -33,12 +33,12 @@ Features
 
 Upcoming Features
 --------------
-- ##### Support for multiple Javascript libraries
-- ##### Ability to add resources via URIs
-- ##### Collaborative coding support
-- ##### User interface redesign (HELP!)
+- __Support for multiple Javascript libraries__
+- __Ability to add resources via URIs__
+- __Collaborative coding support__
+- __User interface redesign (HELP!)__
 - Inline previews of things like colors, resources like images etc.
-- ##### Code highlighting and prettyfying
+- __Code highlighting and prettyfying__
 - JSLint support
 
 Things in bold are what I am working on currently.   

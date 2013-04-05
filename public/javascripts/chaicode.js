@@ -11,7 +11,7 @@ Link   : http://opensource.org/licenses/gpl-3.0.html
 	"use strict";
 
 	if (typeof self.Chaicode === "undefined") self.Chaicode = {};
-	self.Chaicode.onload = function() {
+	self.Chaicode.init = function() {
 
 		//caching required DOM references
 		__live_updater.iframe_window = document.getElementsByTagName('iframe')[0].contentWindow;
@@ -64,20 +64,14 @@ Link   : http://opensource.org/licenses/gpl-3.0.html
 		//insert html before appeanding javascript or jQuery ready won't fire correctly
 		(__live_updater.iframe_body).innerHTML = html_content;
 
-		//if (code_type === "js") {
-
 		//insert custom javascript
 		(__live_updater.iframe_head).removeChild(__live_updater.iframe_script);
 		__live_updater.iframe_script = (__live_updater.iframe_head).appendChild((__live_updater.iframe).createElement('script'));
 
 		(__live_updater.iframe_script).textContent = '//<![CDATA[' + "\n" + js_content + "\n" + '//]]>';
 
-		//} else if (code_type === "css") {
-
 		//insert css content
 		(__live_updater.iframe_style).textContent = css_content;
-
-		//}
 
 		/*dispatch "sendUpdate" event to inform socket code to update full screen live view*/
 		document.getElementsByTagName('body')[0].dispatchEvent(__live_updater.update_event);

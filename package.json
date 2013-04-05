@@ -9,7 +9,13 @@
     "real time",
     "prototyping",
     "live",
-    "tools"],
+    "tools",
+    "across devices",
+    "code export"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zeusdeux/chaicode.git"
+    },
   "bugs": {
     "email": "zeusdeux@gmail.com"
   },

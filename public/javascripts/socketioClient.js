@@ -12,11 +12,11 @@
 		});
 
 		socket.on("joinedSuccessfully", function(msg) {
-			console.log(msg);
+			//console.log(msg);
 		});
 
 		socket.on("updateYourselfSon", function(data) {
-			console.log("----DATA RECEIVED----");
+			//console.log("----DATA RECEIVED----");
 
 
 			//append html before appeanding javascript or jQuery ready won't fire correctly
@@ -27,13 +27,13 @@
 			script_element.id = "chaicode_js";
 			script_element.textContent = '//<![CDATA[' + "\n" + data.js + "\n" + '//]]>';
 			var a = document.head.appendChild(script_element);
-			console.log(a);
+			//console.log(a);
 
 			document.getElementById("chaicode_css").textContent = data.css;
 
 
 			/*Since its hard coded to be wrapped in $(document).ready() currently, I emit the ready event again 
-			to reload javascript on the page after updating it. I doubt this works.*/
+			to reload javascript on the page after updating it. I doubt this is needed.*/
 			$(document).ready();
 		});
 	});

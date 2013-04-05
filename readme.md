@@ -40,6 +40,7 @@ Upcoming Features
 - Inline previews of things like colors, resources like images etc.
 - __Code highlighting and prettyfying__
 - JSLint support
+- Support for SASS, CoffeeScript, Jade and other popular engines
 
 Things in bold are what I am working on currently.   
 

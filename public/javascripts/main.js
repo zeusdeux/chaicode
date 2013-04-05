@@ -26,10 +26,10 @@
 		$('#export').click(function() {
 			alert("Don't forget to wrap your JS code in window.onready or $(document).ready etc and disable your popup blocker, if any. :)");
 			get_iframe_data();
-			console.log(get_iframe_data.html);
+			//console.log(get_iframe_data.html);
 			$.post('/export', get_iframe_data.html, function(data) {
-				console.log("success");
-				console.log(data);
+				//console.log("success");
+				//console.log(data);
 				var win = window.open('http://localhost:3001/getExportedFile', 'download_window');
 
 			});
@@ -50,6 +50,7 @@
 			/*Cant go live if the chai isn't saved. Fix to show error on ui and not only in console*/
 			if (window.location.pathname === "/") {
 				console.error(new Error("Chaicode Error: Can't go live till chai is saved atleast once.").message);
+				alert("Chaicode Error: Can't go live till chai is saved atleast once.");
 				return false;
 			}
 
@@ -60,7 +61,7 @@
 
 			socket_join_room(pathnameArray[1] + pathnameArray[2] + live_scrn_handler.timestampInBase62);
 
-
+			alert("chaicode: Goto "+window.location.href + "/" + live_scrn_handler.timestampInBase62 + "/live"+" on your devices for live updations.");
 			var live_scrn_win = window.open(window.location.href + "/" + live_scrn_handler.timestampInBase62 + "/live", 'fullscreen');
 		});
 	}
@@ -119,7 +120,7 @@
 	$(document).ready(function() {
 		$('#code_form').attr('action', (window.location.pathname.length == 1 ? "" : window.location.pathname) + "/save");
 
-		Chaicode.onload();
+		Chaicode.init();
 
 		socket_connect();
 

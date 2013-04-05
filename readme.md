@@ -45,6 +45,7 @@ Upcoming Features
 - __Ability to delete a particular chai__
 - User login support
 - __Landing page for all present chais on the server (public ones) and on per user basis__
+- Add chai embed functionality to let the user share his/her code
 
 Things in bold are what I am working on currently.   
 

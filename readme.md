@@ -4,11 +4,11 @@ chaicode
 
 An HTML, CSS & JavaScript prototyping tool that shows code updates *live* across devices.
 
-Chaicode lets you try out ideas quickly and live across devices [*no moar refreshes*].    
-You can simultaneously test your layout on a desktop, phone and tablet [*yay!*].  
+Chaicode lets you try out ideas quickly and live across devices [ *no moar refreshes* ].    
+You can simultaneously test your layout on a desktop, phone and tablet [ *yay!* ].  
 It is currently in its alpha stage and a lot of features are in the pipeline including *collaborative coding*.
 
-PS: chaicode is partially built using chaicode [*we must go deeper!*].
+PS: chaicode is partially built using chaicode [ *we must go deeper!* ].
 
 Installation
 --------------
@@ -27,8 +27,8 @@ Features
 - jQuery support is built-in
 - Ability to export your work
 - Forking abilities
-- Landing page for all present chais on the server [*Delete is still down. Will be fixing it soon.*]
-- __Run on your own system!__ [*No more internet required to mess with ideas.*]
+- Landing page for all present chais on the server [ *Delete is still down. Will be fixing it soon.* ]
+- __Run on your own system!__ [ *No more internet required to mess with ideas.* ]
 
 Upcoming Features
 --------------

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>chaicode &alpha;</title>
+	<meta name="keywords" content="chaicode,live,html,html5,javascript,css,editor,programming,jquery" />
+	<meta name="description" content="chaicode is a html, javascript and css editor that shows output in realtime across devices." />
+	<meta name="author" content="Mudit Ameta" />
+	<meta name="robots" content="index,follow" />
+	<link rel="stylesheet" href="/css/reset.css" />
+	<link rel="stylesheet" href="/css/common.css" />
+	<link rel="stylesheet" href="/css/chaisList.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="/js/chaiList.js"></script>
+	<script src="/js/util.js"></script>
+</head>
+<body>
+	<div class="header"></div>
+	<div class="chais_container">
+	<% results.forEach(function(chai, index){ %>
+		<div class="chai">
+			<div class="name"><p>No of revisions: <span><%= chai.revisionCount %></span></p></div>
+			<div class="js-html disappear"><%- chai.html %></div>
+			<div class="js-css disappear"><%- chai.css %></div>
+			<div class="js-js disappear"><%- chai.js %></div>
+			<div class="output left"><iframe src="" frameborder="0" id="<%= chai.id %>"></iframe></div>
+			<div class="actions left">
+				<a class="goto" href="<%= '/'+chai.id+'/1'%>">Goto</a>
+				<a class="delete" href="">Delete</a>
+			</div>
+		</div>
+	<% }); %>
+	</div>
+</body>
+</html>

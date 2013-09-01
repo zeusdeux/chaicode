@@ -1,0 +1,22 @@
+.disappear {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+a, a:visited {
+	text-decoration: none;
+	color: white;
+}

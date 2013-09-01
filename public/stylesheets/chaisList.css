@@ -1,0 +1,102 @@
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+}
+.header { 
+height: 50px;
+background-color: black;
+width: 100%;
+position: absolute;
+left: 0;
+top: 0;
+display: none;
+}
+.chais_container {
+    max-width: 1020px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+	.chai {
+	    width: 320px;
+	    overflow: hidden;
+	    height: 300px;
+	    border-radius: 5px;
+	    margin: 10px;
+	    float: left;
+	}
+		.name {
+		    height: 30px;
+		    width: 320px;
+		    line-height: 1em;
+		    background-color: #222;
+		    border-top-left-radius: 5px;
+		    border-top-right-radius: 5px;
+		    color: white;
+		    padding: 5px;
+		}
+		.output {
+		    height: 270px;
+		    width: 250px;
+		    border-bottom-left-radius: 5px;
+		    box-shadow: inset 0px 0px 5px 1px #ddd;
+		}
+			.output iframe {
+				height: inherit;
+				width: inherit;
+			}
+		.actions {
+		    width: 70px;
+		    height: 270px;
+		    border-bottom-right-radius: 5px;
+		    color: white;
+		}
+		.goto {
+		    height: 140px;
+		    cursor: pointer;
+		    position: relative;
+		    background-color: rgb(67, 221, 67);
+		    padding-top: 3.5em;
+		    padding-left: 1em;
+		    display: block;
+		}
+			.goto:after {
+			    position: absolute;
+				content: "";
+				top: 0px;
+				left: -1px;
+				width: 69px;
+				height: 138px;
+				border: 1px solid rgba(255,255,255,0.3);
+				box-shadow: inset 0px 0px 1px 0px rgba(255,255,255,1);
+			}
+			.goto:hover{
+				background-color: rgb(64, 209, 64);
+			}
+
+		.delete {
+		    height: 140px;
+		    cursor: pointer;
+		    position: relative;
+		    padding-top: 3.5em;
+		    padding-left: 1em;
+		    background-color: rgb(235, 85, 85);
+		    display: block;
+		}
+			.delete:after {
+			    position: absolute;
+				content: "";
+				top: 0px;
+				left: -1px;
+				width: 69px;
+				height: 138px;
+				border: 1px solid rgba(255,255,255,0.3);
+				box-shadow: inset 0px 0px 1px 0px rgba(255,255,255,1);
+			}
+			.delete:hover{
+				background-color: rgb(216, 77, 77);
+			}

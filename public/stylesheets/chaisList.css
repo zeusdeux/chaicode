@@ -8,14 +8,16 @@
     -webkit-transition: all 0.2s linear;
 }
 .header { 
-height: 50px;
-background-color: black;
-width: 100%;
-position: absolute;
-left: 0;
-top: 0;
-display: none;
+	width: 170px;
+	padding: 5px;
+	margin: 0 auto;
 }
+	#new_button {
+		background-color: #45CD32;
+		height: 40px;
+		line-height: 1.8em;
+		width: 150px;
+	}
 .chais_container {
     max-width: 1020px;
     overflow: hidden;

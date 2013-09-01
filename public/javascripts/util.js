@@ -1,4 +1,5 @@
 (function() {
+	"use strict";
 	function Util() {
 
 	}
@@ -20,6 +21,8 @@
 			return toBase62(q, arr);
 		}
 	};
-	if (typeof self.Chaicode === "undefined") self.Chaicode = {};
-	self.Chaicode.util = new Util();
+	/*Dont get it? Read http://perfectionkills.com/global-eval-what-are-the-options/*/
+	var global = (function(){ return this || (1 ? eval : 0)('this')})();
+	if (typeof global.Chaicode === "undefined") global.Chaicode = {};
+	global.Chaicode.util = new Util();
 })();

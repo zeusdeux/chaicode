@@ -9,9 +9,10 @@ Link   : http://opensource.org/licenses/gpl-3.0.html
 ******************************************************************************************************/
 (function() {
 	"use strict";
-
-	if (typeof self.Chaicode === "undefined") self.Chaicode = {};
-	self.Chaicode.init = function() {
+	/*Dont get it? Read http://perfectionkills.com/global-eval-what-are-the-options/*/
+	var global = (function(){ return this || (1,eval)('this') })();
+	if (typeof global.Chaicode === "undefined") global.Chaicode = {};
+	global.Chaicode.init = function() {
 
 		//caching required DOM references
 		__live_updater.iframe_window = document.getElementsByTagName('iframe')[0].contentWindow;

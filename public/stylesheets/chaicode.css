@@ -35,27 +35,9 @@ a {
 			height: 400px;
 		}
 
-.disappear {
-	position: absolute;
-	top: -9999px;
-	left: -9999px;
-}
-
-.breathe{
+.breathe {
 	margin-right: 20px;
 	margin-bottom: 20px;
-}
-
-.left {
-	float: left;
-}
-
-.right {
-	float: right;
-}
-
-.clear {
-	clear: both;
 }
 
 #action_buttons {

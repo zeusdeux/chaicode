@@ -5,6 +5,9 @@ exports = module.exports = function(app, db){
 	/*GET chaiCodeController home*/
 	app.get('/', chaiCodeController.index);
 
+	/*GET for all the current chais*/
+	app.get('/:user/list', /*insert middleware to check if username is valid,*/ chaiCodeController.getAllChais(db), chaiCodeController.listAllChais);
+
 	/*GET exported file of current meddle*/
 	app.get('/getExportedFile', util.getExportedFile);
 

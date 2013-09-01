@@ -30,6 +30,15 @@ exports.findChaiById = function(db, id, callback) {
 	}, callback);
 };
 
+/*This finds the chais for a user or chais without any owner when user is ""*/
+exports.findChaisByUser = function(db, user, callback){
+	this.chaiCollection = this.chaiCollection || db.collection('chai');
+
+	this.chaiCollection.find({
+		user: user
+	}).toArray(callback);
+};
+
 /*This is to be used with get requests to paths of type /:id or /:id/:recipe where recipe 1 otherwise it is implicitly 
 taken as 1 unless stated otherwise in url*/
 exports.findByIdAndRecipe = function(db, id, recipe, fields, callback) {

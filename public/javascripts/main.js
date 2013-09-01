@@ -18,6 +18,14 @@
 		};
 	}
 
+	function list_chais_handler(){
+		$('#list_chais').click(function() {
+			/*test should actually be the username. after implementing user functionality, CHANGE IT!*/
+			console.log(window.location.origin+"test/list");
+			window.location = window.location.origin+"/test/list";
+		});
+	}
+
 	function save_handler() {
 		$('#save').click(function() {
 			$('#code_form').submit();
@@ -126,6 +134,7 @@
 
 		socket_connect();
 
+		list_chais_handler();
 		save_handler();
 		export_handler();
 		fork_handler();

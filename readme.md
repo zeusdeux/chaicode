@@ -3,27 +3,23 @@ chaicode
 ##### (chai -code), *n.*  
 
 An HTML, CSS & JavaScript prototyping tool that shows code updates *live* across devices.
-   
-Chaicode lets you try out ideas quickly and live across devices. NO MOAR REFRESHES!  
-You can simultaneously test your layout on a desktop, phone and tablet. YAY!  
-It is currently in its alpha stage and a lot of features are in the pipeline including *collaborative coding* and a lot more!
 
-PS: chaicode is partially built using chaicode.
+Chaicode lets you try out ideas quickly and live across devices [*no moar refreshes*].    
+You can simultaneously test your layout on a desktop, phone and tablet [*yay!*].  
+It is currently in its alpha stage and a lot of features are in the pipeline including *collaborative coding*.
+
+PS: chaicode is partially built using chaicode [*we must go deeper!*].
 
 Installation
 --------------
 - Install [Node.js](http://nodejs.org/ "Node.js installation link")
 - Install [mongoDB](http://www.mongodb.org/downloads "mongoDB installation link") for your OS
-- Setup your mongoDB server
-	- Choose port and ip for the mongoDB server
-	- Enable database authentication if required
-    - Connect via mongo command line client and create a database for chaicode
-    - If database auth is enabled then setup a user for the chaicode database
-    - Put these details in config/config.json (default port is *27017* and server is *localhost*)
-    - Database options in config/config.json refers to [MongoClient options object](http://mongodb.github.io/node-mongodb-native/api-generated/mongoclient.html "MongoClient options object").
-- Put the port you want to run chaicode on in config/config.json (defaults to *3000*)
-- Perform ```npm install``` inside the chaicode folder
-- Navigate to the chaicode directory via command line and start the app by entering ```npm start```
+- Start the mongoDB server
+- Navigate to the ```chaicode``` directory via command line   
+	- Perform ```npm install```
+	- start the app by entering ```npm start``` and hitting ```return```
+
+For controlling some advanced features, take a look at ```config.json``` under ```chaicode/config```.
 
 Features
 --------------
@@ -31,7 +27,8 @@ Features
 - jQuery support is built-in
 - Ability to export your work
 - Forking abilities
-- RUN ON YOUR OWN SYSTEM! (No more internet required to mess with ideas)
+- Landing page for all present chais on the server [*Delete is still down. Will be fixing it soon.*]
+- __Run on your own system!__ [*No more internet required to mess with ideas.*]
 
 Upcoming Features
 --------------
@@ -46,7 +43,7 @@ Upcoming Features
 - Timeline of different chai recipes or versions of your code
 - __Ability to delete a particular chai__
 - User login support
-- __Landing page for all present chais on the server (public ones) and on per user basis__
+- __Landing page for all present chais on the server based on user__
 - Add chai embed functionality to let the user share his/her code
 
 Things in bold are what I am working on currently.   

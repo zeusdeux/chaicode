@@ -9,7 +9,7 @@
 
 var fs = require('fs');
 
-exports.export = function(req, res) {
+exports.export = function(req, res, next) {
 
 	var data = "<html><head>";
 	if ( !! req.body.chaiId && !! req.body.recipeNumber) {
@@ -21,12 +21,16 @@ exports.export = function(req, res) {
 	data += req.body.body;
 	data += "</body></html>";
 
-	var temp_file = fs.writeFileSync('temp.html', data, 'utf-8');
+	try {
+		var temp_file = fs.writeFileSync('tmp/temp.html', data, 'utf-8');
+	} catch (e) {
+		next(e);
+	}
 	res.end("done");
 };
 
 exports.getExportedFile = function(req, res) {
-	res.download('temp.html', 'chai.html');
+	res.download('tmp/temp.html', 'chai.html');
 };
 
 exports.notFound404 = function(req, res) {
@@ -39,9 +43,32 @@ exports.notFound404 = function(req, res) {
 exports.toBase62 = function toBase62(number, arr) {
 	var list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
+	if (!arguments.length)
+		throw new SyntaxError("toBase62: Invalid syntax. Use toBase62(number[, Array])");
+
+	number = parseInt(arguments[0], 10);
+
+	if (isNaN(number))
+		throw new TypeError("toBase62: First parameter needs to be a valid integer number");
+
+	if (number < 0) {
+		console.error("toBase62: Number passed is less than zero");
+		console.error("toBase62: Taking its abs and moving on");
+		number = Math.abs(number);
+	}
+
 	var q = Math.floor(number / 62),
 		r = number % 62;
 
+	if (!(arguments[1] instanceof Array))
+		arr = arguments[1] = [];
+
+	/* arguments[2] is used internally for some book keeping */
+	if (!arguments[2])
+		arguments[2] = 0;
+
+	if (arguments[2] === 0 && arguments[1].length > 0)
+		arr = arguments[1] = [];
 
 	if (q === 0) {
 		arr.push(list[r]);
@@ -50,11 +77,15 @@ exports.toBase62 = function toBase62(number, arr) {
 		q = Math.floor(number / 62);
 		r = number % 62;
 		arr.push(list[r]);
-		return toBase62(q, arr);
+		return toBase62(q, arr, ++arguments[2]);
 	}
 };
 
 exports.fromBase62ToInt = function(base62num) {
+
+	if (!arguments.length || (typeof arguments[0] !== "string"))
+		throw new SyntaxError("fromBase62ToInt: Invalid syntax. Use fromBase62ToInt(String)");
+
 	var list = {
 		0: 0,
 		1: 1,
@@ -119,7 +150,7 @@ exports.fromBase62ToInt = function(base62num) {
 		Y: 60,
 		Z: 61
 	},
-	numArray = base62num.split("").reverse(),
+		numArray = base62num.split("").reverse(),
 		intNum = 0;
 
 	for (var i = 0; i < numArray.length; i++) {

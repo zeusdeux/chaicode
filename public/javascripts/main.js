@@ -34,14 +34,14 @@
 
 	function export_handler() {
 		$('#export').click(function() {
-			alert("Don't forget to wrap your JS code in window.onready or $(document).ready etc and disable your popup blocker, if any. :)");
-			get_iframe_data();
-			//console.log(get_iframe_data.html);
-			$.post('/export', get_iframe_data.html, function(data) {
-				//console.log("success");
-				//console.log(data);
-				var win = window.open('http://localhost:3001/getExportedFile', 'download_window');
 
+			if(!confirm("Don't forget to wrap your JS code in window.onready or $(document).ready, etc and disable your popup blocker (if any).")){
+				return false;
+			}
+
+			get_iframe_data();
+			$.post('/export', get_iframe_data.html, function() {
+				var win = window.open('http://localhost:3001/getExportedFile', 'download_window');
 			});
 		});
 	}

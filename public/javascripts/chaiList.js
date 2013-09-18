@@ -1,6 +1,6 @@
 (function($){
 	$(document).ready(function(){
-		$.each($(".chai"), function(val, index){
+		$.each($(".chai"), function(){
 			var iframe_doc = this.getElementsByClassName("output")[0].getElementsByTagName("iframe")[0].contentWindow.document,
 				iframe_head = iframe_doc.getElementsByTagName("head")[0],
 				$this = $(this),
@@ -16,7 +16,7 @@
 			iframe_head.appendChild(style);
 			
 			/*insert jquery*/
-			jquery.src = "http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
+			jquery.src = "http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js";
 			iframe_head.appendChild(jquery);
 
 			/*insert user javascript*/

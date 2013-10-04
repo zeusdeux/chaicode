@@ -1,0 +1,21 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'start' ]
+2 info using npm@1.3.8
+3 info using node@v0.10.18
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 error Error: ENOENT, open 'E:\Work\chaicode\config\package.json'
+6 error If you need help, you may report this log at:
+6 error     <http://github.com/isaacs/npm/issues>
+6 error or email it to:
+6 error     <npm-@googlegroups.com>
+7 error System Windows_NT 6.1.7601
+8 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
+9 error cwd E:\Work\chaicode\config
+10 error node -v v0.10.18
+11 error npm -v 1.3.8
+12 error path E:\Work\chaicode\config\package.json
+13 error code ENOENT
+14 error errno 34
+15 verbose exit [ 34, true ]

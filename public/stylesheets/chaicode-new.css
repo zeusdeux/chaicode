@@ -1,0 +1,59 @@
+.box-title{
+	display: inline-block;
+	
+	font-family: 'PT Sans', sans-serif;
+	
+	padding: 0.3em;
+	
+	border: 1px solid #aaa;
+	border-bottom: 0;
+}
+
+.active-box-title{
+	display: inline-block;
+	
+	font-family: 'PT Sans', sans-serif;
+	
+	padding: 0.3em;
+	
+	border: 1px solid #929ba2;
+	border-bottom: 0;
+	
+	background-color: #bbcbd8;
+	color: #57646d;
+}
+
+#chaicode_container{
+	width: 49%;
+	
+	margin-left: 0.5%;
+	display: inline-block;
+}
+
+#chaicode_container > div{
+	width: 97%;
+	
+	margin: 1% 0 0 1%;
+	padding: 0;
+}
+
+.btn-right{
+	border-top-left-radius: 0px;
+	-moz-border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	-moz-border-bottom-left-radius: 0px;
+}
+
+.btn-middle{
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-right: 0px;
+}
+
+.btn-left{
+	border-top-right-radius: 0px;
+	-moz-border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	-moz-border-bottom-right-radius: 0px;
+	border-right: 0px;
+}

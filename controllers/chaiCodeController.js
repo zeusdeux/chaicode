@@ -35,7 +35,8 @@ exports.getAllChais = function(db) {
 				req.chais[index] = {};
 				req.chais[index]["id"] = val._id;
 				req.chais[index]["revisionCount"] = val.recipes.length;
-				dbUtil.findByIdAndRecipe(db, val._id, 1, {
+				/*Get the latest recipe for each chai*/
+				dbUtil.findByIdAndRecipe(db, val._id, val.recipes.length, {
 					html: 1,
 					css: 1,
 					js: 1

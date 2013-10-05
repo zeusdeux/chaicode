@@ -17,8 +17,7 @@ Link   : http://opensource.org/licenses/gpl-3.0.html
 	global.Chaicode.init = function() {
 
 		//caching required DOM references
-		__live_updater.iframe_window = document.getElementsByTagName('iframe')[0].contentWindow;
-		__live_updater.iframe = __live_updater.iframe_window.document;
+		__live_updater.iframe = document.getElementsByTagName('iframe')[0].contentWindow.document;
 		__live_updater.iframe_head = (__live_updater.iframe).getElementsByTagName('head')[0];
 		__live_updater.iframe_body = (__live_updater.iframe).getElementsByTagName('body')[0];
 		__live_updater.update_event = document.createEvent('Event');
@@ -29,7 +28,7 @@ Link   : http://opensource.org/licenses/gpl-3.0.html
 
 		//append jQuery
 		var jquery_script = (__live_updater.iframe).createElement('script');
-		jquery_script.src = "http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js";
+		jquery_script.src = "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js";
 		(__live_updater.iframe_head).appendChild(jquery_script);
 
 		//append script tag to hold custom javascript code

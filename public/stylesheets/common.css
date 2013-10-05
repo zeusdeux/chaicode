@@ -23,7 +23,7 @@ a, a:visited {
 
 .button {
 	display: inline-block;
-	width: 100px;
+/*	width: 100px;*/
 	
 	outline: none;
 	border: 0;
@@ -40,7 +40,7 @@ a, a:visited {
 	background-color: #8ea5b5;
 	
 	margin: 5px 0 5px 0;
-	padding: 5px;
+	padding: 0.8em;
 	
 	text-shadow: 1px 1px 1px #c6d4df;
 	color: #57646d;
@@ -56,6 +56,10 @@ a, a:visited {
 	background-image: -webkit-linear-gradient(#8ea5b5, #bbcbd8);
 	background-image: -o-linear-gradient(#8ea5b5, #bbcbd8);
 	background-color: #bbcbd8;
+}
+
+.button a{
+	color: #57646d;
 }
 
 /* div.button:after {

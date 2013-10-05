@@ -49,3 +49,7 @@ a {
 	margin-left: 1%;
 }
 
+
+#action_buttons a{
+	display: block;
+}

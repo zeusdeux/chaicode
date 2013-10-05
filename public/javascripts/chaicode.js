@@ -10,7 +10,9 @@ Link   : http://opensource.org/licenses/gpl-3.0.html
 (function() {
 	"use strict";
 	/*Dont get it? Read http://perfectionkills.com/global-eval-what-are-the-options/*/
-	var global = (function(){ return this || (1,eval)('this') })();
+	var global = (function() {
+		return this || (1, eval)('this');
+	})();
 	if (typeof global.Chaicode === "undefined") global.Chaicode = {};
 	global.Chaicode.init = function() {
 
@@ -33,23 +35,24 @@ Link   : http://opensource.org/licenses/gpl-3.0.html
 		//append script tag to hold custom javascript code
 		__live_updater.iframe_script = (__live_updater.iframe_head).appendChild((__live_updater.iframe).createElement('script'));
 
-		$('textarea').keyup(function(e) {
-			if (!(e.keyCode >= 9 && e.keyCode <= 45) && !(e.keyCode >= 112 && e.keyCode <= 145)) {
-				__live_updater($(this));
-			}
-		});
-		$('textarea').keydown(function(e) {
-			if (e.keyCode == 9) { //tab pressed
-				e.preventDefault(); // stops its action
-			}
-		});
-
 		/*Fires a keyup event on textarea to load meddle data into output box after the iframe has 
 		finished loading ALL its resource and parsing.*/
-		var iframe_readyState_timer = window.setInterval(function(){
-			if (__live_updater.iframe.readyState === "complete"){
+		var iframe_readyState_timer = window.setInterval(function() {
+			if (__live_updater.iframe.readyState === "complete") {
 				window.clearInterval(iframe_readyState_timer);
 				console.log("iframe readyState complete");
+
+				$('textarea').keyup(function(e) {
+					if (!(e.keyCode >= 9 && e.keyCode <= 45) && !(e.keyCode >= 112 && e.keyCode <= 145)) {
+						__live_updater($(this));
+					}
+				});
+				$('textarea').keydown(function(e) {
+					if (e.keyCode == 9) { //tab pressed
+						e.preventDefault(); // stops its action
+					}
+				});
+
 				$('textarea').keyup();
 			}
 		}, 100);

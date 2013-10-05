@@ -10,4 +10,6 @@ exports = module.exports = function(app, db) {
 
 	/*POST to save :recipe of meddle*/
 	app.post('/:id/:recipe/save', chaiCodeController.saveNewRecipe(db));
+
+	/*app.post('/:id/:recipe/delete', chaiCodeController.deleteChai);*/
 };

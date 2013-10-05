@@ -41,7 +41,7 @@
 
 			get_iframe_data();
 			$.post('/export', get_iframe_data.html, function() {
-				var win = window.open('http://localhost:3001/getExportedFile', 'download_window');
+				var win = window.open(window.location.origin+'/getExportedFile', 'download_window');
 			});
 		});
 	}

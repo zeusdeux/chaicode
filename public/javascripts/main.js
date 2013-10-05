@@ -1,3 +1,6 @@
+/*The jquery not defined error occurs when the iframe and parent page contain different versions of jQuery.
+It might even happen when they contain same version. Its a $/jQuery conflict basically.
+Fix it.*/
 (function($) {
 	"use strict";
 	/*Cache window.location, window, window.location.pathname, window.location.href etc*/
@@ -141,6 +144,10 @@
 		live_scrn_handler();
 		collab_handler();
 		new_chai_handler();
+
+		/*The handler for tidy up button (tidy_up) is in 
+		codemirrorIntegration.js as it requires codemirror context of
+		each codemirror editor*/
 
 	});
 })(jQuery);

@@ -26,7 +26,9 @@ app.configure(function() {
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser('ohlookitsspidermonkeyman'));
-  app.use(express.session({ secret: 'ohmanitwasjustamonkeyinasuperspideymansuit' }));
+  app.use(express.session({
+    secret: 'ohmanitwasjustamonkeyinasuperspideymansuit'
+  }));
   //app.use(express.csrf());
 
   /*Setting up public directory support*/
@@ -43,11 +45,10 @@ app.configure('development', function() {
   /*Custom error handler*/
   app.use(function(err, req, res, next) {
     var errorStack = err.stack.split(/\bat\b/),
-
-      errorHtml = "<ul>";
+        errorHtml = "<ul>";
 
     for (var i = 0; i < errorStack.length; i++)
-    errorHtml += "<li>at " + errorStack[i] + "</li>";
+      errorHtml += "<li>at " + errorStack[i] + "</li>";
 
     errorHtml += "</ul>";
 
@@ -56,8 +57,8 @@ app.configure('development', function() {
       error: err.message,
       errorStack: errorHtml
     });
-    console.log(chaiCodeUtil.colors.red+"Error:");
-    console.log(chaiCodeUtil.colors.reset+err.stack+chaiCodeUtil.colors.reset);
+    console.log(chaiCodeUtil.colors.red + "Error:");
+    console.log(chaiCodeUtil.colors.reset + err.stack + chaiCodeUtil.colors.reset);
   });
 });
 
@@ -68,8 +69,8 @@ app.configure('production', function() {
       error: "Internal server error",
       errorStack: ""
     });
-    console.log(chaiCodeUtil.colors.red+"Error:");
-    console.log(chaiCodeUtil.colors.reset+err.stack+chaiCodeUtil.colors.reset);
+    console.log(chaiCodeUtil.colors.red + "Error:");
+    console.log(chaiCodeUtil.colors.reset + err.stack + chaiCodeUtil.colors.reset);
   });
 });
 
@@ -85,7 +86,7 @@ this.dbClient.open(function(err, client) {
   /*switch to chaiCode database*/
   db = client.db(config.DB.NAME);
 
-  console.log(chaiCodeUtil.colors.green+"Database auth is "+(config.DB.AUTH_ENABLED? "enabled"+chaiCodeUtil.colors.reset:chaiCodeUtil.colors.red+"disabled"+chaiCodeUtil.colors.reset));
+  console.log(chaiCodeUtil.colors.green + "Database auth is " + (config.DB.AUTH_ENABLED ? "enabled" + chaiCodeUtil.colors.reset : chaiCodeUtil.colors.red + "disabled" + chaiCodeUtil.colors.reset));
 
   /*Authenticate nodejs instance for using config.DB.NAME db if config.DB.AUTH_ENABLED == true*/
   if (config.DB.AUTH_ENABLED) {
@@ -93,7 +94,7 @@ this.dbClient.open(function(err, client) {
       if (err || result === null) {
         throw (err ? err : new Error("Authentication to database failed"));
       }
-      if (result){
+      if (result) {
         console.log(chaiCodeUtil.colors.green + "User authenticated to " + chaiCodeUtil.colors.yellow + config.DB.NAME + chaiCodeUtil.colors.green + " database" + chaiCodeUtil.colors.reset);
       }
     });
@@ -110,6 +111,10 @@ this.dbClient.open(function(err, client) {
 
   /*Start socket.io server and bind to express server so that they listen on same port for requests*/
   var io = socketIO.listen(server);
+
+  /*Setting logging to 'warn'*/
+  /*https://github.com/LearnBoost/Socket.IO/wiki/Configuring-Socket.IO*/
+  io.set('log level', 1);
 
   io.sockets.on('connection', function(socket) {
     socketioServer(socket);

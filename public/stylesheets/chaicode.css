@@ -41,8 +41,15 @@ a {
 }
 
 #action_buttons {
+/*
 	width: 98% !important;
-	margin: 0 auto !important;
+	margin: 0 auto;
 	overflow: hidden;
+*/
+	margin-left: 1%;
 }
 
+
+#action_buttons a{
+	display: block;
+}

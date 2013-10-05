@@ -7,7 +7,10 @@ License: GNU General Public License, version 3 (GPL-3.0)
 Link   : http://opensource.org/licenses/gpl-3.0.html
 
 ******************************************************************************************************/
-(function() {
+/*The jquery not defined error occurs when the iframe and parent page contain different versions of jQuery.
+It might even happen when they contain same version. Its a $/jQuery conflict basically.
+Fix it.*/
+(function($) {
 	"use strict";
 	/*Dont get it? Read http://perfectionkills.com/global-eval-what-are-the-options/*/
 	var global = (function() {
@@ -41,12 +44,12 @@ Link   : http://opensource.org/licenses/gpl-3.0.html
 				window.clearInterval(iframe_readyState_timer);
 				console.log("iframe readyState complete");
 
-				$('textarea').keyup(function(e) {
+				$('textarea.js-textarea-hook').keyup(function(e) {
 					if (!(e.keyCode >= 9 && e.keyCode <= 45) && !(e.keyCode >= 112 && e.keyCode <= 145)) {
 						__live_updater($(this));
 					}
 				});
-				$('textarea').keydown(function(e) {
+				$('textarea.js-textarea-hook').keydown(function(e) {
 					if (e.keyCode == 9) { //tab pressed
 						e.preventDefault(); // stops its action
 					}
@@ -61,8 +64,7 @@ Link   : http://opensource.org/licenses/gpl-3.0.html
 	function __live_updater(t) {
 		var css_content = $('#chaicode_css_content').val(),
 			js_content = $('#chaicode_js_content').val(),
-			html_content = $('#chaicode_html_content').val(),
-			code_type = t.data('code');
+			html_content = $('#chaicode_html_content').val();
 
 		//insert html before appeanding javascript or jQuery ready won't fire correctly
 		(__live_updater.iframe_body).innerHTML = html_content;
@@ -80,4 +82,4 @@ Link   : http://opensource.org/licenses/gpl-3.0.html
 		document.getElementsByTagName('body')[0].dispatchEvent(__live_updater.update_event);
 
 	}
-})();
+})(jQuery);

@@ -1,12 +1,11 @@
-var util = require('../util/util'),
-	dbUtil = require('../db/db'),
+var dbUtil = require('../db/db'),
 	chaiCodeHelper = require('./chaiCodeHelper'),
 	html = "",
 	css = "",
 	js = "";
 
 exports.index = function(req, res) {
-	res.render('index.ejs', {
+	res.render('index', {
 		html: "",
 		css: "",
 		js: ""

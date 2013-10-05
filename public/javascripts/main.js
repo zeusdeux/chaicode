@@ -3,7 +3,7 @@
 	/*Cache window.location, window, window.location.pathname, window.location.href etc*/
 
 	/*Dont get it? Read http://perfectionkills.com/global-eval-what-are-the-options/*/
-	var global = (function(){ return this || (1 ? eval : 0)('this')})();
+	var global = (function(){ return this || (1 ? eval : 0)('this');})();
 	if (typeof global.Chaicode === 'undefined') global.Chaicode = {};
 
 	function get_iframe_data() {

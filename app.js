@@ -108,8 +108,11 @@ this.dbClient.open(function(err, client) {
 
   //console.log(socketIO.Manager.toString());
 
+
   /*Start socket.io server and bind to express server so that they listen on same port for requests*/
   var io = socketIO.listen(server);
+
+  io.set('log level', 1);
 
   io.sockets.on('connection', function(socket) {
     socketioServer(socket);

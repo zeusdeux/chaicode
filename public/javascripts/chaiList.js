@@ -10,8 +10,6 @@
 				jquery = iframe_doc.createElement("script"),
 				style = iframe_doc.createElement("style"),
 				script = iframe_doc.createElement("script");
-				console.log(js);
-				console.log(css);
 			/*insert style*/
 			iframe_head.appendChild(style);
 			
@@ -30,6 +28,11 @@
 				iframe_doc.getElementsByTagName("body")[0].innerHTML = html;
 				style.innerHTML = css;
 				script.innerHTML = js;
+
+				/*If jQuery load fails in the 1st listed chai then it refuses to load
+				in all listed chais or basically shit hits the fan somehow and
+				all remaining chais using jQuery (or any library) start failing
+				saying: $ undefined or jQuery undefined etc*/
 			}
 			}, 100);
 		});
@@ -37,5 +40,6 @@
 		$('#new_button').click(function() {
 			window.location = window.location.origin;
 		});
+
 	});
 })(jQuery);

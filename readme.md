@@ -24,9 +24,13 @@ For controlling some advanced features, take a look at ```config.json``` under `
 Features
 --------------
 - Live HTML, CSS and Javascript updates across devices
+- Auto complete for HTML, CSS and Javascript
+- Zen mode (hit F11 when in any region)
+- CSSLint and JS Lint (using JSHint) added
+- Code tidy up added
 - jQuery support is built-in
-- Ability to export your work
-- Forking abilities
+- Ability to export your work as a single html file
+- Ability to fork code into your own version of it
 - Landing page for all present chais on the server [ *Delete is still down. Will be fixing it soon.* ]
 - __Run on your own system!__ [ *No more internet required to mess with ideas.* ]
 
@@ -37,8 +41,8 @@ Upcoming Features
 - __Collaborative coding support__
 - __User interface redesign (HELP!)__
 - Inline previews of things like colors, resources like images etc.
-- __Code highlighting and prettyfying__
-- JSLint support
+- ~~__Code highlighting and prettyfying__~~ __DONE!__
+- ~~JSLint support~~ __DONE!__
 - Support for SASS, CoffeeScript, Jade and other popular engines
 - Timeline of different chai recipes or versions of your code
 - __Ability to delete a particular chai__

@@ -171,3 +171,7 @@ node_modules/
 *.sublime-workspace
 current_issues.txt
 config/config_mine.json
+public/javascripts/cm/demo
+public/javascripts/cm/doc
+public/javascripts/cm/test
+public/javascripts/cm/theme

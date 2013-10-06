@@ -1,6 +1,7 @@
 # Changelog
 
 ## v0.5.0
+- Added auto-completion for HTML (including HTML5),CSS and Javascript
 - Added line numbers
 - Added syntax highlighting
 - Added selected word repetitions highlighting across code

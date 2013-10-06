@@ -1,7 +1,7 @@
 {
   "name": "chaicode",
   "description": "A quick web prototyping tool which updates live across devices without the need to refresh.",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "private": true,
   "author": "Mudit Ameta <zeusdeux@gmail.com>",
   "keywords": [

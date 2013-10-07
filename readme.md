@@ -7,7 +7,7 @@ An HTML, CSS & JavaScript prototyping tool that shows code updates *live* across
 Chaicode lets you try out ideas quickly and live across devices [ *no moar refreshes* ].    
 You can simultaneously test your layout on a desktop, phone and tablet [ *yay!* ].  
 It is currently in its alpha stage and a lot of features are in the pipeline including *collaborative coding*.   
-You can currently demo it [here](http://chaicode-3lads.rhcloud.com/ "chaicode demo link").
+You can currently demo it [here](http://chaicode-3lads.rhcloud.com/ "chaicode demo link").   
 __Note:__ The *live* feature takes a little bit of time to load up on openshift, fyi.
 
 PS: chaicode is partially built using chaicode [ *we must go deeper!* ].

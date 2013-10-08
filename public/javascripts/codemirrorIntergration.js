@@ -32,6 +32,9 @@
                 "F11": function(cm) {
                     cm.setOption("fullScreen", !cm.getOption("fullScreen"));
                 },
+                "Alt-Z": function(cm) {
+                    cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+                },
                 "Esc": function(cm) {
                     if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
                 }
@@ -60,6 +63,9 @@
                 "F11": function(cm) {
                     cm.setOption("fullScreen", !cm.getOption("fullScreen"));
                 },
+                "Alt-Z": function(cm) {
+                    cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+                },
                 "Esc": function(cm) {
                     if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
                 }
@@ -86,6 +92,9 @@
             extraKeys: {
                 "Ctrl-Space": "autocompletehtml",
                 "F11": function(cm) {
+                    cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+                },
+                "Alt-Z": function(cm) {
                     cm.setOption("fullScreen", !cm.getOption("fullScreen"));
                 },
                 "Esc": function(cm) {
